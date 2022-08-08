@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #222;
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.nav {
+    position: fixed;
+    background-color: #222;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all .3s ease-in-out;
+}
+
+.nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+    transition: all .3s ease-in-out;
+}
+
+.nav h1 {
+    margin: 0;
+}
+
+.nav ul {
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    transition: all .3s ease-in-out;
+}
+
+.nav a {
+    color: #FFF;
+    text-decoration: none;
+    padding: 7px 15px;
+    transition: all .3s ease-in-out;
+}
+
+.nav.active {
+    background-color: #FFF;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav.active ul {
+    background-color: #FFF;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav.active .container {
+    padding: 20px 0;
+}
+
+.nav.active a {
+    color: #000;
+}
+
+.nav a.current,
+.nav a:hover {
+    color: #c0392b;
+    text-shadow: 0 0 1px #c0392b;
+}
+
+.bars {
+    display: none;
+    position: relative;
+    width: 25px;
+    height: 3px;
+    margin: 0 20px;
+    z-index: 1;
+}
+
+.bars::before,
+.bars::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.bars::after {
+    top: 5px;
+}
+
+.bars.active::before, 
+.bars.active::after {
+    top: 0;
+} 
+
+.times {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    width: 25px;
+    height: 3px;
+    background-color:transparent;
+    z-index: 1;
+}
+
+.times::before,
+.times::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    transition: 0.5s;
+    z-index: 1;
+}
+.times::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.times.active::before, 
+.times.active::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+} 
+
+.nav:not(.active) .bars::before,
+.nav:not(.active) .bars::after,
+.nav:not(.active) .times::before,
+.nav:not(.active) .times::after {
+    background-color: #fff;
+}
+
+.hero {
+    background: bottom center / cover no-repeat url('https://source.unsplash.com/random/1260x750');
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+    z-index: -2;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin: -20px 0 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.content h2,
+.content h3 {
+    font-size: 150%;
+    margin: 20px 0;
+}
+
+.content p {
+    color: #555;
+    line-height: 30px;
+    letter-spacing: 1.2px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #222;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background-color: #9b9b9b78;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #9b9b9b;
+}
+
+
+@media(max-width: 572px) {
+    .nav ul {
+        background-color: #222;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70vw;
+        z-index: 100;
+        transition-delay: 0.7s;
+    }
+
+    .nav ul.active {
+        right: 0;
+    }
+    .bars,.times {
+        display: block;
+    }
+}
+
+@media(max-width: 425px) {
+    .nav ul {
+        width: 90vw;
+    }
+}

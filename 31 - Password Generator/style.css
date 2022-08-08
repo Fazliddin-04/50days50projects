@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #700b97;
+  color: #fff;
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  padding: 10px;
+  margin: 0;
+}
+
+h2 {
+  margin: 10px 0 20px;
+  text-align: center;
+}
+
+.container {
+  background-color: #3e065f;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 350px;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.result-container {
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  font-size: 18px;
+  letter-spacing: 1px;
+  padding: 12px 10px;
+  height: 50px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.result-container #result {
+  word-wrap: break-word;
+  max-width: calc(100% - 40px);
+}
+
+.btn {
+  border: none;
+  background-color: #8e05c2;
+  color: #fff;
+  font-size: 16px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.result-container .btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.btn-large {
+  display: block;
+  width: 100%;
+}
+
+.setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+#length {
+    background-color: #3e065f;
+    color: #fff;
+    border: 0;
+    width: 50px;
+    padding: 5px;
+    font-size: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.btn#clipboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn#clipboard::after {
+  font-family: 'Font Awesome 5 Pro';
+  content: '\f328';
+  font-weight: normal;
+  transition: 0.5s ease;
+}
+
+.btn.active#clipboard::after {
+  font-family: 'Font Awesome 5 Pro';
+  content: '\f46c';
+  font-weight: normal;
+  color: rgb(0, 255, 0);
+  transform: scale(1.2);
+  transition: 0.5s ease;
+}
+
+.btn#clipboard::before {
+  content: 'Copied';
+  font-size: 14px;
+  width: 50px;
+  height: 20px;
+  position: absolute;
+  right: -70px;
+  top: 50%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: rgb(255, 255, 255);
+  border: 1px solid gray;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: 0.5s ease;
+}
+
+.btn.active#clipboard::before {
+  opacity: 1;
+}

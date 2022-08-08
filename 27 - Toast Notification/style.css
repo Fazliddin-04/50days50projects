@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(90deg, #7d5fff, #7158e2);
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.btn {
+    background-color: #fff;
+    color: #7d5fff;
+    font-family: inherit;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    overflow: unset;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+#toasts {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.toast {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    animation: animate-toast 1s linear 2s;
+}
+
+@keyframes animate-toast {
+    to {
+        opacity: 0;
+    }
+}
+
+.toast.info {
+    color: #7158e2;
+}
+
+.toast.success {
+    color: green;
+}
+
+.toast.error {
+    color: red;
+}
