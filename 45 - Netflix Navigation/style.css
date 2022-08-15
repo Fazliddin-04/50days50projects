@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list li {
+  margin: 20px 0;
+}
+
+.list li a {
+  color: rgb(34, 31, 31);
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.list ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.desktop .nav .list li {
+  opacity: 0;
+  transform: translateY(100%);
+}
+.desktop .nav.visible .list li {
+  transform: translateY(0%);
+  opacity: 1;
+  transition: 500ms ease;
+}
+
+.text {
+  text-transform: uppercase;
+}
+
+.logo {
+  width: 150px;
+}
+
+.nav-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.open-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.desktop .nav {
+  transition: transform 0.4s ease;
+}
+
+.nav.visible {
+  transform: translateX(0%);
+}
+
+.nav-black {
+  background-color: rgb(34, 31, 31);
+  width: 60%;
+  max-width: 480px;
+  min-width: 320px;
+  transition-delay: 0.4s;
+}
+
+.desktop .nav-black {
+  width: 100%;
+  max-width: unset;
+  min-width: unset;
+  transition-delay: 0.8s;
+}
+
+.nav-black.visible {
+  transition-delay: 0s;
+}
+
+.nav-red {
+  background-color: rgb(229, 9, 20);
+  width: 95%;
+  transition-delay: 0.2s;
+}
+
+.desktop .nav-red {
+  transition-delay: 0.4s;
+}
+
+.nav-white {
+  background-color: #fff;
+  width: 95%;
+  padding: 40px;
+  position: relative;
+  transition-delay: 0s;
+}
+
+.nav-white.visible {
+  transition-delay: 0.4s;
+}
+
+.desktop .nav-white {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.desktop .nav-white .logo {
+  width: 50%;
+  transition: 1s ease;
+}
+
+.desktop .nav-white .list {
+  width: 0;
+  transition: 1s ease;
+}
+.desktop .nav-white.visible .list {
+  width: 40%;
+  transform: scaleY(1);
+  transition-delay: 1s;
+}
+
+.desktop .nav-white .list li a {
+  font-size: clamp(1rem, 1rem + 0.5vw, 2rem);
+}
+
+.desktop .nav-white.visible {
+  transition-delay: 0.8s;
+}
+
+.close-btn {
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  opacity: 0.3;
+}
