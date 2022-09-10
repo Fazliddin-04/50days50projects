@@ -25,7 +25,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 80vh;
-    border: 5px solid #fff;
     border-radius: 50px;
     color: #fff;
     cursor: pointer;
@@ -46,19 +45,8 @@ body {
 
 .panel.active {
     flex: 5;
-    animation: animate_bg 10s infinite ease-in-out;
     animation-delay: 0.8s;
 }
-
-@keyframes animate_bg {
-    0%,100% {
-        background-size: 100%;
-    }
-    50% {
-        background-size: 120%;
-    }
-}
-
 .panel.active h3 {
     opacity: 1;
     transition: opacity 0.3s ease-in 0.4s;
