@@ -53,7 +53,6 @@ body {
 
 .circle.close {
     transform: rotate(-90deg);
-    box-shadow: 0 0 20px #FFF;
 }
 
 .circle button {
@@ -84,7 +83,6 @@ body {
 
 .container.show-nav + nav li {
     transform: translateX(0);
-    transition-delay: 0.3s;
 }
 
 nav {
@@ -115,11 +113,13 @@ nav ul li i {
 nav ul li + li {
     margin-left: 15px;
     transform: translateX(-150%);
+    transition-delay: 50ms;
 } 
 
 nav ul li + li + li {
     margin-left: 30px;
     transform: translateX(-200%);
+    transition-delay: 100ms;
 } 
 
 .content img {
@@ -145,45 +145,3 @@ nav ul li + li + li {
     line-height: 1.5;
 }
 
-
-/* loading */
-.loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99999;
-    background-color: #333;
-    width: 100vw;
-    height: 100vh;
-    animation: loading 2s forwards;
-}
-
-@keyframes loading {
-    90% {
-        opacity: 1;
-        z-index: 99999;  
-    }
-    98% {
-        opacity: 0;
-        z-index: 99999;  
-    }
-    100% {
-        display: none;
-        opacity: 0;
-        z-index: -1;  
-    }
-}
-
-
-.loader {
-    animation: loader 2s forwards;
-}
-
-@keyframes loader {
-    0% {
-        transform: scale(0.2);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
